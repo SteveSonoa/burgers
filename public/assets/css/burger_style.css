@@ -12,9 +12,23 @@ body {
 	padding-top: 15px;
 }
 
+.menu-price {
+	font-family: 'Schoolbell', cursive;
+	font-size: 3.5em;
+	color: #dcdcdc;
+	font-weight: bold;
+	padding-top: 15px;
+}
+
 .served-items {
 	font-family: 'Viga', sans-serif;
 	font-size: 1em;
+	color: #7986a6;
+}
+
+.served-title {
+	font-family: 'Viga', sans-serif;
+	font-size: 2em;
 	color: #7986a6;
 }
 
@@ -43,8 +57,8 @@ body {
 }
 
 .served-padding {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 0px;
+	padding-right: 55px;
 	padding-top: 10px;
 	padding-bottom: 5px;
 	text-align: center;

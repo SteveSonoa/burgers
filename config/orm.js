@@ -41,7 +41,7 @@ var orm = {
 
 	// tableName, thisCol, and thisValue are strings
 	insertOne: function(tableName, thisCol, thisValue, cb) {
-		let q = "INSERT INTO " + tableName + " ('" + thisCol + "') VALUES ('"+ thisValue +"');";
+		let q = "INSERT INTO " + tableName + " (" + thisCol + ") VALUES ('"+ thisValue +"');";
 
 		// Load the SQL
 		connection.query(q, function(err2, results) {
@@ -56,7 +56,7 @@ var orm = {
 		let q = "UPDATE " + tableName + " SET " + objToSql(setValues) + " WHERE " + whereValue + ";" ;
 
 		// Load the SQL
-		connection.query(q, [setValues, whereValues], function(err2, results) {
+		connection.query(q, [setValues, whereValue], function(err2, results) {
 			if (err2) throw err2;
 			cb(results);
 		});
