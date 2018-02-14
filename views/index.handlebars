@@ -77,13 +77,16 @@
 </div>
 
 <script type="text/javascript">
-	console.log("Index JS has been accessed.");
+	// console.log("Index JS has been accessed.");
+	// Load the DOM prior to running code
 	$(function() {
-		console.log("Private function accessed.");
+		// console.log("Private function accessed.");
+		// Submit Button - Add A New Burger
 		$("#btnSubmit").on("click", function(e) {
 			e.preventDefault();
 
 			console.log("Submit Button was pressed.");
+			// Insert burgerName to the burger_name in the burgers table
 			$.ajax("/api/burgers", {
 				type: "POST",
 				data: { burgerName: $("#burgerName").val().trim() }
@@ -94,11 +97,14 @@
 			);
 		});
 
+		// Add To Menu button - move from BOTD to Daily Menu
 		$(".devour").on("click", function(e) {
 			e.preventDefault();
 
-			console.log("Delete Button was pressed.");
+			// console.log("Delete Button was pressed.");
+			// Get the ID of the burger clicked
 			let thisID = $(this).attr("data-id");
+			// Update the attr of the correct burger (by id) to 1
 			$.ajax("/api/burgers/" + thisID, {
 				type: "PUT",
 				data: { id: thisID }
@@ -110,7 +116,4 @@
 		})
 
 	});
-	// List available burgers to the menu
-	// Add a burger to the database
-	// List served burgers to the served board
 </script>
